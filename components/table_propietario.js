@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import { useSelector, useDispatch } from "react-redux";
 import {toggleChangeAction, updateAction, deleteAction} from '../redux/reducer'
 
-export default function table(){
+export default function Table(){
 
     
     
