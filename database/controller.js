@@ -7,9 +7,9 @@ export async function getUsers(req, res){
         const users = await Users.find({})
 
         // if(!user)return res.status(404).json({error:"Data not Found"})
-        res.status(200).json(users)
+        return res.status(200).json(users)
     } catch (error) {
-        res.status(404).json({error: "Error While Fetching Data"})
+        return res.status(404).json({error: "Error While Fetching Data"})
     }
 }
 
@@ -20,11 +20,11 @@ export async function getUser(req, res){
 
         if(userId){
             const user = await Users.findById(userId);
-            res.status(200).json(user)
-        }
+            return res.status(200).json(user)
+        }else{
 
-        res.status(404).json({error:"User not selected"})
-    } catch (error) {
+        return res.status(404).json({error:"User not selected"})
+    }} catch (error) {
         return res.status(404).json({error:"Cannot get the user"})
     }
 }
@@ -49,11 +49,11 @@ export async function putUser(req, res){
 
         if(userId && formData){
             const user = await Users.findByIdAndUpdate(userId, formData);
-            res.status(200).json(user)
-        }
+            return res.status(200).json(user)
+        }else
         res.status(404).json({error:"User not selected"})
     } catch (error) {
-        res.status(404).json({error:"Error while updating the data...!"})
+        return res.status(404).json({error:"Error while updating the data...!"})
     }
 }
 
@@ -64,11 +64,11 @@ export async function deleteUser(req, res){
 
        if(userId){
         const user = await Users.findByIdAndDelete(userId)
-        res.status(200).json(user)
-       } 
+        return res.status(200).json(user)
+       } {
 
-       res.status(404).json({error:"User not selected"})
-    } catch (error) {
-        res.status(404).json({error:"Error while deleting the data...!"})
+       return res.status(404).json({error:"User not selected"})
+    }} catch (error) {
+        return res.status(404).json({error:"Error while deleting the data...!"})
     }
 }
