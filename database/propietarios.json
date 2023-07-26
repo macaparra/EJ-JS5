@@ -1,0 +1,13 @@
+[
+    {
+        "id":"1",
+        "nombre":"Macarena",
+        "cedula":"30682886",
+        "email":"parrameca@gmail.com",
+        "telefono":"04246992967",
+        "marca":"corsa",
+        "placa":"A2DW",
+        "fecha":"2023-09-12",
+        "tipo":"correctivo"
+    }
+]
